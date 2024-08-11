@@ -2,6 +2,7 @@ const cRows = document.querySelector("#cRows");
 const aRows = document.querySelector("#aRows");
 const kRows = document.querySelector("#kRows");
 const dateHolder = document.querySelector("#date");
+
 const today = new Date();
 
 dateHolder.textContent = today.toLocaleDateString("en-US", {
@@ -21,8 +22,8 @@ const totalCost = {
     const allTdElements = document.querySelectorAll(".game-cell");
 
     allTdElements.forEach((element, index) => element.addEventListener("click", (event) => {
-        // element.textContent = "X";
         event.target.textContent = "X";
+        
         if (index >= 0 && index < 20) {
             allTdElements[index + 20].textContent = "O";
             allTdElements[index + 40].textContent = "O";
@@ -33,16 +34,10 @@ const totalCost = {
             allTdElements[index - 20].textContent = "O";
             allTdElements[index - 40].textContent = "O";
         }
+        
         updateTotal();
     }));
-    // allTdElements.forEach(element => element.addEventListener("click", () => {
-    //     element.textContent = "O";
-    //     updateTotal();
-    // }))
-    
-    
-    
-    
+     
 })();
 
 function updateTotal() {
@@ -75,3 +70,24 @@ function updateTotal() {
 }
 
 updateTotal();
+
+for (key in totalCost) {
+    localStorage.setItem(key, JSON.stringify(totalCost[key]));
+};
+
+
+
+function showGrandTotal() {
+    const cTotalRow = document.querySelector("#cTotal-row");
+    const aTotalRow = document.querySelector("#aTotal-row");
+    const kTotalRow = document.querySelector("#kTotal-row");
+
+    cTotalRow.querySelector("td").textContent = JSON.parse(localStorage.getItem("C"));
+    aTotalRow.querySelector("td").textContent = JSON.parse(localStorage.getItem("A"));
+    kTotalRow.querySelector("td").textContent = JSON.parse(localStorage.getItem("K"));
+
+
+}
+
+showGrandTotal();
+
