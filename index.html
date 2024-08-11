@@ -8,8 +8,10 @@
 </head>
 <body>
     <div id="total-cost-div">
-        <table id="total-cost-table">
-            <caption id="total-cost-caption">Games Table</caption>
+        <table>
+            <caption>
+                Game Card
+            </caption>
             <thead>
                 <tr>
                     <th scope="col">Name</th>
@@ -37,79 +39,82 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th>C</th>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
-                    <td name="c"></td>
+                <tr id="cRows">
+                    <th scope="row">C</th>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td class="game-cell" data-name="C"></td>
+                    <td id="cTotal"></td>
+                    
                 </tr>
-                <tr>
-                    <tr>
-                        <th>A</th>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                        <td name="a"></td>
-                    </tr>
+                <tr id="aRows">
+                    <th scope="row">A</th>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+                    <td class="game-cell" data-name="A"></td>
+
+                    <td id="aTotal"></td>
                 </tr>
-                <tr>
-                    <tr>
-                        <th>K</th>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                        <td name="k"></td>
-                    </tr>
+                <tr id="kRows">
+                    <th scope="row">K</th>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+                    <td class="game-cell" data-name="K"></td>
+
+                    <td id="kTotal"></td>
                 </tr>
+                
             </tbody>
         </table>
     </div>
