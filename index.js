@@ -71,9 +71,13 @@ function updateTotal() {
 
 updateTotal();
 
-for (key in totalCost) {
-    localStorage.setItem(key, JSON.stringify(totalCost[key]));
-};
+if (localStorage.length < 1) {
+    for (key in totalCost) {
+        localStorage.setItem(key, JSON.stringify(totalCost[key]));
+    };
+
+}
+
 
 
 
@@ -91,3 +95,40 @@ function showGrandTotal() {
 
 showGrandTotal();
 
+function makeSaveResultsBtnWork() {
+    const button = document.querySelector("#save-results-btn");
+    const allTds = document.querySelectorAll(".game-cell");
+    
+    const cName = document.querySelector("#cTotal-row").querySelector("th");
+    const cTotal = document.querySelector("#cTotal");
+
+    const aName = document.querySelector("#aTotal-row").querySelector("th");
+    const aTotal = document.querySelector("#aTotal");
+
+    const kName = document.querySelector("#kTotal-row").querySelector("th");
+    const kTotal = document.querySelector("#kTotal");
+
+    
+    
+    button.addEventListener("click", () => {
+        const allCellsFilled = Array.from(allTds).every(cell => {
+            return cell.textContent.length > 0;
+        });
+        
+        
+        
+        if (allCellsFilled) {
+            localStorage.setItem(cName.textContent, JSON.stringify(Number(localStorage.getItem("C")) + Number(cTotal.textContent)));
+            localStorage.setItem(aName.textContent, JSON.stringify(Number(localStorage.getItem("A")) + Number(aTotal.textContent)));
+            localStorage.setItem(kName.textContent, JSON.stringify(Number(localStorage.getItem("K")) + Number(kTotal.textContent)));
+            showGrandTotal();
+            allTds.forEach(cell => cell.textContent = "");
+            updateTotal();
+        } else {
+            alert("Fill out the game card")
+        }
+    });
+
+};
+
+makeSaveResultsBtnWork();

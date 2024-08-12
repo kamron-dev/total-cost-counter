@@ -59,3 +59,11 @@ tbody>tr:nth-of-type(even) {
     grid-row: 2;
     width: 50%;
 }
+
+button {
+    position: absolute;
+    left: 82vw;
+    top: 28.5vh;
+    width: 6rem;
+    height: 3rem;
+}
