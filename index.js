@@ -122,7 +122,6 @@ function makeSaveResultsBtnWork() {
             localStorage.setItem(aName.textContent, JSON.stringify(Number(localStorage.getItem("A")) + Number(aTotal.textContent)));
             localStorage.setItem(kName.textContent, JSON.stringify(Number(localStorage.getItem("K")) + Number(kTotal.textContent)));
             showGrandTotal();
-            allTds.forEach(cell => cell.textContent = "");
             updateTotal();
         } else {
             alert("Fill out the game card")
@@ -132,3 +131,12 @@ function makeSaveResultsBtnWork() {
 };
 
 makeSaveResultsBtnWork();
+
+(function clearCardBtn() {
+    const clearButton = document.querySelector("#clear-card-btn");
+
+    clearButton.addEventListener("click", () => {
+        const allTds = document.querySelectorAll(".game-cell")
+        allTds.forEach(td => td.textContent = "");
+    });
+})();
